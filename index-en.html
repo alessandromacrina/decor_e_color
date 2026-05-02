@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Decor&Color by Leo Macrina - professional painter in Lombardy. Interior and exterior painting, special decorations, Venetian stucco. Free quotes.">
+    <meta name="keywords" content="painter Lombardy, painting Milan, Leo Macrina, wall decoration, Venetian plaster, interior painting">
+    <meta name="author" content="Leo Macrina">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Decor&Color by Leo Macrina - Professional Painter">
+    <meta property="og:description" content="Professional painting and decoration service in Lombardy. Quality and passion in every project.">
+    <meta property="og:type" content="website">
+    
+    <title>Decor&Color | Leo Macrina - Professional Painter Lombardy | Free Quotes</title>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --primary: #2d3e50;
+            --accent: #e8b86d;
+            --light: #f8f9fa;
+            --white: #ffffff;
+            --text: #2c3e50;
+            --text-light: #6c757d;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-warm: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-lg: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+
+        /* Hero Header */
+        .hero {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e8ba3 100%);
+            color: white;
+            padding: 0;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(232,184,109,0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff 0%, #e8b86d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -1px;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            font-weight: 300;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1.05rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-primary {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(232,184,109,0.4);
+        }
+
+        .cta-secondary {
+            background: rgba(255,255,255,0.15);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .cta-secondary:hover {
+            background: rgba(255,255,255,0.25);
+            transform: translateY(-3px);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 1.2rem 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+        }
+
+        nav.scrolled {
+            padding: 0.8rem 0;
+            box-shadow: 0 2px 30px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        section {
+            padding: 6rem 0;
+            position: relative;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary);
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1rem;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            margin-top: 2rem;
+        }
+
+        /* Services Grid */
+        #servizi {
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+        }
+
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .servizio-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .servizio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent) 0%, #d4a760 100%);
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .servizio-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.12);
+        }
+
+        .servizio-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .servizio-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .servizio-card h3 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .servizio-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        /* Chi Sono */
+        #chi-siamo {
+            background: white;
+        }
+
+        .chi-siamo-content {
+            max-width: 900px;
+            margin: 3rem auto 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 4rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .chi-siamo-content::before {
+            content: '"';
+            position: absolute;
+            top: 20px;
+            left: 30px;
+            font-size: 6rem;
+            font-family: 'Playfair Display', serif;
+            color: var(--accent);
+            opacity: 0.2;
+        }
+
+        .chi-siamo-content p {
+            font-size: 1.15rem;
+            line-height: 2;
+            color: var(--text);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .chi-siamo-content p:last-child {
+            margin-bottom: 0;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        /* Perché Scegliermi */
+        #perche {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+        }
+
+        #perche h2 {
+            color: white;
+        }
+
+        #perche h2::after {
+            background: var(--accent);
+        }
+
+        #perche .section-subtitle {
+            color: rgba(255,255,255,0.8);
+        }
+
+        .perche-sceglierci {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .motivo {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.4s;
+        }
+
+        .motivo:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+
+        .motivo-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));
+        }
+
+        .motivo h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        .motivo p {
+            color: rgba(255,255,255,0.9);
+            line-height: 1.7;
+        }
+
+        /* Contatti */
+        #contatti {
+            background: white;
+        }
+
+        .contatti-wrapper {
+            max-width: 700px;
+            margin: 3rem auto 0;
+        }
+
+        .contatti-info {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 3.5rem;
+            border-radius: 30px;
+            box-shadow: var(--shadow-lg);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .contatto-item {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 15px;
+            transition: all 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .contatto-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .contatto-item span {
+            font-size: 2rem;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent) 0%, #d4a760 100%);
+            border-radius: 15px;
+            flex-shrink: 0;
+        }
+
+        .contatto-item strong {
+            display: block;
+            color: var(--primary);
+            margin-bottom: 0.3rem;
+            font-weight: 600;
+        }
+
+        .contatto-item a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contatto-item a:hover {
+            color: var(--accent);
+        }
+
+        .cta-box {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #d4a760 100%);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(232,184,109,0.3);
+        }
+
+        .cta-box a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background: white;
+            color: var(--primary);
+            padding: 1.2rem 2.5rem;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            font-size: 1.1rem;
+        }
+
+        .cta-box a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Zone Servite */
+        .zone-servite {
+            background: #f8f9fa;
+            padding: 3rem 0;
+        }
+
+        .zone-content {
+            text-align: center;
+            max-width: 900px;
+            margin: 2rem auto;
+        }
+
+        .zone-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .zone-tag {
+            background: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 50px;
+            color: var(--text);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .zone-tag:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        /* Scroll to Top */
+        .scroll-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            color: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            font-size: 1.5rem;
+            z-index: 999;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 6rem 1.5rem 3rem;
+            }
+
+            nav ul {
+                gap: 1.5rem;
+                padding: 0 1rem;
+            }
+
+            nav a {
+                font-size: 0.9rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .servizi-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .chi-siamo-content {
+                padding: 2.5rem 2rem;
+            }
+
+            .contatti-info {
+                padding: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .zone-tags {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <ul>
+            <li><a href="#servizi">Services</a></li>
+            <li><a href="#chi-siamo">About Me</a></li>
+            <li><a href="#perche">Why Choose Me</a></li>
+            <li><a href="#zone">Areas</a></li>
+            <li><a href="#contatti">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Pulsante lingua in alto a destra (sopra la navbar) -->
+    <div style="position: fixed; top: 1rem; right: 1rem; z-index: 1001;">
+        <a href="index-it.html" style="background: #2d3e50; color: white; padding: 8px 16px; border-radius: 8px; text-decoration: none; font-size: 0.9rem; font-weight: 500;">IT</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-logo">Decor&Color</h1>
+            <p class="hero-subtitle">by Leo Macrina</p>
+            <p class="hero-description">
+                I transform your walls into works of art. With passion, experience, and attention to detail, 
+                I bring your spaces to life with high‑quality colors and finishes.
+            </p>
+            <div class="cta-buttons">
+                <a href="tel:+393923315681" class="cta-button cta-primary">
+                    📞 Call Now
+                </a>
+                <a href="#contatti" class="cta-button cta-secondary">
+                    ✉️ Free Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servizi -->
+    <section id="servizi">
+        <div class="container">
+            <h2>My Services</h2>
+            <p class="section-subtitle">Complete solutions for all your needs</p>
+            <div class="servizi-grid">
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏠</div>
+                    <h3>Interior Painting</h3>
+                    <p>Painting of walls and ceilings with high‑quality finishes. Accurate and clean work for every room in your home.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏢</div>
+                    <h3>Exterior Painting</h3>
+                    <p>Facades and exterior walls with weather‑resistant products. Durable protection and flawless results.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">✨</div>
+                    <h3>Special Decorations</h3>
+                    <p>Decorative effects, Venetian stucco, spatula finishes and other techniques to make your spaces unique.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🔧</div>
+                    <h3>Surface Preparation</h3>
+                    <p>Skimming, filling and careful preparation of walls to ensure a perfect finish.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🎨</div>
+                    <h3>Color Consultation</h3>
+                    <p>I help you choose the perfect shades for every room, based on your tastes and the style of your home.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏪</div>
+                    <h3>Offices and Shops</h3>
+                    <p>Painting for commercial and professional spaces, respecting schedules and with the highest professionalism.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chi Sono -->
+    <section id="chi-sono">
+        <div class="container">
+            <h2>About Me</h2>
+            <p class="section-subtitle">Passion and professionalism at the service of your home</p>
+            <div class="chi-sono-content">
+                <p style="text-align: center;">
+                    I’m Leo Macrina, a professional painter with years of experience in interior and exterior 
+                    painting and finishing.
+                </p>
+                <p style="text-align: center;">
+                    Every job is carried out with the utmost care and attention to detail, using 
+                    only certified high-quality materials.
+                </p>
+                <p style="text-align: center;">
+                   Customer satisfaction is my priority: punctuality, cleanliness and guaranteed results.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Perché Scegliermi -->
+    <section id="perche">
+        <div class="container">
+            <h2>Why Choose Me</h2>
+            <p class="section-subtitle">Quality that makes the difference</p>
+            <div class="perche-scegliermi">
+                <div class="motivo">
+                    <div class="motivo-icon">⭐</div>
+                    <h3>Experience</h3>
+                    <p>Years of work in the field with hundreds of satisfied customers</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">💎</div>
+                    <h3>Quality</h3>
+                    <p>Use only professional, high‑quality products</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">🤝</div>
+                    <h3>Reliability</h3>
+                    <p>Punctuality and respect for agreed‑upon arrangements</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">💰</div>
+                    <h3>Reasonable Prices</h3>
+                    <p>Clear and transparent quotes, with no surprises</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zone Servite -->
+    <section id="zone" class="zone-servite">
+        <div class="container">
+            <h2>Areas Served</h2>
+            <div class="zone-content">
+                <p style="font-size: 1.1rem; color: var(--text-light); margin-bottom: 2rem;">
+                    I operate throughout Lombardy, guaranteeing the same standard of quality and professionalism 
+                    in every province. On request I also work outside the region; for more information, 
+                    contact me by phone or email.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contatti -->
+    <section id="contatti">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p class="section-subtitle">Request your free, no-obligation quote</p>
+            <div class="contatti-wrapper">
+                <div class="contatti-info">
+                    <div class="contatto-item">
+                        <span>📱</span>
+                        <div>
+                            <strong>Phone</strong>
+                            <a href="tel:+393923315681">+39 392 331 5681</a>
+                        </div>
+                    </div>
+                    <div class="contatto-item">
+                        <span>✉️</span>
+                        <div>
+                            <strong>Email</strong>
+                            <a href="mailto:leo.decorecolor@gmail.com">leo.decorecolor@gmail.com</a>
+                        </div>
+                    </div>
+                    <div class="contatto-item">
+                        <span>📍</span>
+                        <div>
+                            <strong>Work Area</strong>
+                            <p>Lombardy</p>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-box">
+                        <a href="tel:+393923315681">
+                            📞 Call Me Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Decor&Color by Leo Macrina - All rights reserved</p>
+            <p style="font-size: 0.9rem;">P.IVA: 03443030121</p>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" id="scrollTop">↑</div>
+
+    <!-- Schema.org Markup for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Decor&Color di Leo Macrina",
+      "description": "Servizio professionale di tinteggiatura e decorazioni in Lombardia",
+      "telephone": "+39-392-331-5681",
+      "email": "leo.decorecolor@gmail.com",
+      "areaServed": {
+        "@type": "State",
+        "name": "Lombardia"
+      },
+      "priceRange": "€€",
+      "url": "https://alessandromacrina.github.io/decor_e_color/"
+    }
+    </script>
+
+    <script>
+        // Scroll animations
+        const navbar = document.getElementById('navbar');
+        const scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('visible');
+            }
+        });
+
+        // Scroll to top
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Smooth scroll for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 80;
+                    const elementPosition = target.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
