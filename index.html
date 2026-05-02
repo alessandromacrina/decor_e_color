@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decor&Color di Leo Macrina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c5f8d 0%, #4a8bc2 100%);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            background: #1e4d6b;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffd700;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 4rem 0;
+        }
+
+        section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        h2 {
+            color: #2c5f8d;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .servizi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .servizio-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .servizio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .servizio-card h3 {
+            color: #2c5f8d;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .servizio-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .perche-sceglierci {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .motivo {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .motivo-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .motivo h3 {
+            color: #2c5f8d;
+            margin-bottom: 0.5rem;
+        }
+
+        .contatti-info {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+
+        .contatto-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .contatto-item span {
+            font-size: 1.5rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #4a8bc2;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background 0.3s;
+            margin-top: 1rem;
+        }
+
+        .cta-button:hover {
+            background: #2c5f8d;
+        }
+
+        footer {
+            background: #1e4d6b;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎨 Decor&Color di Leo Macrina</h1>
+            <p>Imbianchino</p>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#servizi">Servizi</a></li>
+            <li><a href="#chi-siamo">Chi Sono</a></li>
+            <li><a href="#perche">Perché Scegliermi</a></li>
+            <li><a href="#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+
+    <section id="servizi">
+        <div class="container">
+            <h2>I Nostri Servizi</h2>
+            <div class="servizi-grid">
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏠</div>
+                    <h3>Tinteggiatura Interni</h3>
+                    <p>Pittura di pareti e soffitti con finiture di alta qualità. Lavori accurati e puliti per ogni ambiente della tua casa.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏢</div>
+                    <h3>Tinteggiatura Esterni</h3>
+                    <p>Facciate e pareti esterne con prodotti resistenti alle intemperie. Protezione duratura e risultati impeccabili.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">✨</div>
+                    <h3>Decorazioni Speciali</h3>
+                    <p>Effetti decorativi, stucchi veneziani, spatolati e altre tecniche per rendere unici i tuoi ambienti.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🔧</div>
+                    <h3>Preparazione Superfici</h3>
+                    <p>Rasatura, stuccatura e preparazione accurata delle pareti per garantire una finitura perfetta.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🎨</div>
+                    <h3>Consulenza Colori</h3>
+                    <p>Ti aiuterò a scegliere le tonalità perfette per ogni ambiente, in base ai tuoi gusti e allo stile della casa.</p>
+                </div>
+                <div class="servizio-card">
+                    <div class="servizio-icon">🏪</div>
+                    <h3>Uffici e Negozi</h3>
+                    <p>Tinteggiature per spazi commerciali e professionali, con rispetto dei tempi e massima professionalità.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="chi-siamo">
+        <div class="container">
+            <h2>Chi Sono</h2>
+            <div style="max-width: 800px; margin: 0 auto; text-align: center; font-size: 1.1rem;">
+                <p style="margin-bottom: 1rem;">
+                    Professionista del settore con anni di esperienza nella tinteggiatura e nelle finiture d'interni ed esterni.
+                </p>
+                <p style="margin-bottom: 1rem;">
+                    Ogni lavoro viene eseguito con la massima cura e attenzione ai dettagli, utilizzando solo materiali di qualità certificata.
+                </p>
+                <p>
+                    
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="perche">
+        <div class="container">
+            <h2>Perché Scegliermi</h2>
+            <div class="perche-scegliermi">
+                <div class="motivo">
+                    <div class="motivo-icon">⭐</div>
+                    <h3>Esperienza</h3>
+                    <p>Anni di lavoro nel settore con centinaia di clienti soddisfatti</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">💎</div>
+                    <h3>Qualità</h3>
+                    <p>Utilizzo solo prodotti professionali di alta qualità</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">🤝</div>
+                    <h3>Affidabilità</h3>
+                    <p>Puntualità e rispetto degli accordi presi</p>
+                </div>
+                <div class="motivo">
+                    <div class="motivo-icon">💰</div>
+                    <h3>Prezzi Onesti</h3>
+                    <p>Preventivi chiari e trasparenti, senza sorprese</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti">
+        <div class="container">
+            <h2>Contattami</h2>
+            <div class="contatti-info">
+                <div class="contatto-item">
+                    <span>📱</span>
+                    <div>
+                        <strong>Telefono:</strong><br>
+                        <a href="tel:+393923315681" style="color: #2c5f8d; text-decoration: none;">+39 392 331 5681</a>
+                    </div>
+                </div>
+                <div class="contatto-item">
+                    <span>✉️</span>
+                    <div>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:leo.decorecolor@gmail.com" style="color: #2c5f8d; text-decoration: none;">leo.decorecolor@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contatto-item">
+                    <span>📍</span>
+                    <div>
+                        <strong>Zona di lavoro:</strong><br>
+                        Lombardia
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="tel:(+39)3923315681" class="cta-button">📞 Chiamami per un Preventivo Gratuito</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Decor&Color di Leo Macrina - Tutti i diritti riservati</p>
+            <p style="margin-top: 0.5rem; font-size: 0.9rem;">P.IVA: 03443030121</p>
+        </div>
+    </footer>
+</body>
+</html>
